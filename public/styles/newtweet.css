@@ -1,0 +1,26 @@
+.tweetCount {
+  display: flex;
+  justify-content: space-between;
+  border-top: 5px solid #696969;
+  padding-top: 15px;
+}
+
+.tweetSubmit {
+  background-color: #4056A1;
+  color: white;
+  font-family: "Bungee", sans-serif;
+  border: none;
+}
+
+.counter {
+  font-family: "Bungee", sans-serif;
+}
+
+textarea {
+  width: 850px;
+  margin-bottom: 15px;
+}
+
+.overlimit {
+  color: red
+}

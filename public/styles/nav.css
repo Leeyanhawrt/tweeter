@@ -1,0 +1,30 @@
+nav {
+  height: 120px;
+  width: auto;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+nav span {
+  font-family: 'Bungee', sans-serif;
+  margin-left: 1.5em;
+}
+
+.navhead {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin-right: 1.5em;
+}
+
+.navtweetbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fa-angles-down {
+color: red;
+}
