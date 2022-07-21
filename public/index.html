@@ -5,10 +5,17 @@
 
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
+
+  <!-- Time Ago Library-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
   <!-- Fonts Used -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +25,9 @@
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+  <!-- Responsive Design CSS -->
+  <link rel="stylesheet" href="styles/media-queries.css" type="text/css" />
 
   <!-- New-Tweet CSS-->
   <link rel="stylesheet" href="/styles/newtweet.css" type="text/css" />
@@ -47,62 +57,48 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter</span>
-    <div class="navtweetbox">
+    <button class="navTweetBox">
       <span class="navhead"><strong>Write </strong>a new tweet</span>
       <i class="fa-solid fa-angles-down"></i>
-    </div>
+    </button>
   </nav>
 
-  <header class="avatarHead">
-    <div>
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div>
-      <h2>Your Name</h2>
-    </div>
-  </header>
+  <div id="divider">
+    <header class="avatarHead">
+      <div>
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div>
+        <h2>Leeyan Haw</h2>
+      </div>
+    </header>
 
-  <!-- Page-specific (main) content here -->
-  <main class="container">
-    <section class="new-tweet">
-      <h2>Compose Tweet</h2>
-      <form action="/tweets" method="post">
-        <textarea class="characterCounter" name="text" id="tweet-text"
-          placeholder="What are you humming about?"></textarea>
-        <div class="tweetCount">
-          <button class="tweetSubmit" type="submit">Tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <div class="errorBox">
+          <i class="fa-solid fa-triangle-exclamation fa-2x"></i>
+          <!-- Depending on error type, adds the error type to H3 HTML-->
+          <h3 id="errorType"></h3>
+          <i class="fa-solid fa-triangle-exclamation fa-2x"></i>
         </div>
-      </form>
-    </section>
-
-
-
-    <article class="tweetSubmission">
-      <header class="newTweetHead">
-        <div class="leftSideTweetHead">
-          <p>img</p>
-          <p>Newton</p>
-        </div>
-        <p id="handle">@SirIsaac</p>
-      </header>
-      <p id="tweet">If I have seen further it is by standing on the shoulders of giants</p>
-      <footer class="newTweetFoot">
-        <time class="newTweetDate">10 days ago</time>
-        <div class="newTweetIcons">
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart"></i>
-        </div>
-      </footer>
-    </article>
-
-
-
-  </main>
+        <form id="tweetSubmit" action="/tweets" method="post">
+          <textarea class="characterCounter" name="text" id="tweet-text"
+            placeholder="What are you humming about?"></textarea>
+          <div class="tweetCount">
+            <button class="tweetSubmit" type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
+      <button id="myBtn"><i class="fa-solid fa-angles-up fa-2x"></i></i></button>
+      <!-- Container that holds individual tweets that are added dynamically (client.js) -->
+      <section id="tweets-container"></section>
+    </main>
+  </div>
   <script src="./scripts/composer-char-counter.js"></script>
-  <script type="module" src="./scripts/new-tweet.js"></script>
 
 </body>
 

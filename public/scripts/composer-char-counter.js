@@ -1,18 +1,39 @@
 $(document).ready(() => {
-  $("form").keyup(function () {
-    console.log($(this).children(".characterCounter"))
-    let counter = (140 - $(this).children(".characterCounter").val().length)
+  // ///////////////////////////////////////////////////////
+  // Checks # of characters typed changes class if over 140
+  // ///////////////////////////////////////////////////////
+
+  $('form').keyup(function() {
+    const counter = (140 - $(this).children('.characterCounter').val().length);
 
 
-    let numCounter = $(this).children(".tweetCount").children(".counter").html(counter);
+    const numCounter = $(this).children('.tweetCount').children('.counter').html(counter);
     if (counter < 0) {
-      numCounter.addClass("overlimit")
+      numCounter.addClass('overlimit');
     }
 
-    if (numCounter.hasClass("overlimit") && counter >= 0) {
-      numCounter.removeClass("overlimit")
+    if (numCounter.hasClass('overlimit') && counter >= 0) {
+      numCounter.removeClass('overlimit');
     }
-  })
-})
+  });
 
+  // /////////////////////////////////////////////
+  // Fades out if user has scrolled down the page
+  // /////////////////////////////////////////////
+
+  $(window).scroll(() => {
+    if ($(this).scrollTop() > 20) {
+      $('#myBtn').fadeIn();
+    } else {
+      $('#myBtn').fadeOut();
+    }
+  });
+
+  // ////////////////////////////////
+  // Brings user back to top of page
+  // ////////////////////////////////
+  $('#myBtn').click(() => {
+    $('html, body').animate({scrollTop: 0}, 1500);
+  });
+});
 

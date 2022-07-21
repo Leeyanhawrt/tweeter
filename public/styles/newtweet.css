@@ -12,6 +12,14 @@
   border: none;
 }
 
+.tweetSubmit:hover {
+  box-shadow: 10px 5px 5px #696969;
+}
+
+.tweetSubmit:active {
+  background-color: gray;
+}
+
 .counter {
   font-family: "Bungee", sans-serif;
 }
@@ -23,4 +31,13 @@ textarea {
 
 .overlimit {
   color: red
+}
+
+.errorBox {
+  border: 5px solid red;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: red;
+  margin-bottom: 25px;
 }

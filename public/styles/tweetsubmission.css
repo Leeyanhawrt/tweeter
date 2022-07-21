@@ -44,12 +44,13 @@ article .tweetSubmission {
   color: #D4AF37
 }
 
-
 .tweetSubmission {
+  word-wrap: break-word;
   border: 5px solid #696969;
-  width: 875px;
+  width: 100%;
   margin-top: 55px;
   color: #545149;
+  padding: 15px;
 }
 
 .tweetSubmission:hover {
