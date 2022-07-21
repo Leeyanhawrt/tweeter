@@ -1,23 +1,24 @@
 nav {
+  display: flex;
   height: 120px;
   width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
-  display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
 }
 
-nav span {
-  font-family: 'Bungee', sans-serif;
+h1 {
+  font-family: "Bungee", sans-serif;
   margin-left: 1.5em;
+  font-size: 24px;
 }
 
 .navhead {
-  font-family: 'Source Sans Pro', sans-serif;
-  margin-right: 1.5em;
+  font-family: "Source Sans Pro", sans-serif;
+  list-style: none;
 }
 
 .navTweetBox {
@@ -26,9 +27,9 @@ nav span {
   align-items: center;
   background-color: #4056A1;
   border: none;
-  color: white;
+  color: #FFFFFF;
+  margin-right: 1.5em;
 }
-
 .navTweetBox:hover {
   cursor: pointer;
 }
@@ -52,8 +53,7 @@ nav span {
   border-radius: 50%;
   border: 1px solid red;
 }
-
 #myBtn:hover {
   box-shadow: 10px 5px 5px #696969;
-  cursor: pointer
+  cursor: pointer;
 }

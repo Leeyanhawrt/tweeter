@@ -2,7 +2,7 @@
 // Escapes text and re-encodes it to prevent XSS
 // //////////////////////////////////////////////
 
-const escape = function(str) {
+const escape = function (str) {
   const div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
@@ -10,9 +10,9 @@ const escape = function(str) {
 
 const loadTweets = () => {
   $.get('/tweets')
-      .then((data) => {
-        renderTweets(data);
-      });
+    .then((data) => {
+      renderTweets(data);
+    });
 };
 
 const renderTweets = (data) => {
@@ -35,7 +35,7 @@ const createTweetElement = (tweetData) => {
         </header>
         <p id="tweet">${escape(tweetData.content.text)}</p>
         <footer class="newTweetFoot">
-          <time class="newTweetDate">${tweetCreation}</time>
+          <time class="newTweetDate" datetime="${tweetCreation}">${tweetCreation}</time>
           <div class="newTweetIcons">
             <i class="fa-solid fa-flag"></i>
             <i class="fa-solid fa-retweet"></i>
@@ -75,9 +75,9 @@ $(document).ready(() => {
     }
     $.post('/tweets', data, (e) => {
     })
-        .then(() => {
-          resetPage();
-        });
+      .then(() => {
+        resetPage();
+      });
   });
 
   $('.navTweetBox').click(() => {

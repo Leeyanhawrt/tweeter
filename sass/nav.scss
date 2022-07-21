@@ -1,0 +1,70 @@
+$themecolors: #4056A1;
+$fontcolor: #696969;
+$errorcolor: red;
+$plainwhite: #FFFFFF;
+
+@mixin flexBox () {
+  display: flex;
+}
+
+nav {
+  @include flexBox();
+  height: 120px;
+  width: 100%;
+  background-color: $themecolors;
+  color: $plainwhite;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+h1 {
+  font-family: 'Bungee', sans-serif;
+  margin-left: 1.5em;
+  font-size: 24px;
+}
+
+.navhead {
+  font-family: 'Source Sans Pro', sans-serif;
+  list-style: none;
+}
+
+.navTweetBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $themecolors;
+  border: none;
+  color: $plainwhite;
+  margin-right: 1.5em;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.fa-angles-down {
+  color: $errorcolor;
+}
+
+.fa-angles-up {
+  color: white;
+}
+
+#myBtn {
+  position: fixed;
+  background-color: $errorcolor;
+  display: none;
+  bottom: 20px;
+  right: 30px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 1px solid $errorcolor;
+
+  &:hover {
+    box-shadow: 10px 5px 5px $fontcolor;
+    cursor: pointer
+  }
+}
