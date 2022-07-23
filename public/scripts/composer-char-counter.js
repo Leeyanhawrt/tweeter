@@ -3,7 +3,7 @@ $(document).ready(() => {
   // Checks # of characters typed changes class if over 140
   // ///////////////////////////////////////////////////////
 
-  $('form').keyup(function() {
+  $('form').keydown(function() {
     const counter = (140 - $(this).children('.characterCounter').val().length);
 
 
