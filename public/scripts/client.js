@@ -52,6 +52,7 @@ const createTweetElement = (tweetData) => {
 const resetPage = () => {
   $('#tweet-text').val('');
   $('#tweets-container').empty();
+  $('.counter').val(140)
   loadTweets();
   $('.errorBox').hide();
 };
